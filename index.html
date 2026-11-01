@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usman Saleem, MEng | Mechanical Engineer & Technical Project Coordinator</title>
+    <meta name="description" content="Portfolio of Usman Saleem, MEng. Mechanical Engineering, Manufacturing, Project Coordination, CAD, and Process Improvement.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0f19;
+            --surface: #111827;
+            --surface-hover: #1f2937;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-highlight: rgba(59, 130, 246, 0.4);
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.2);
+            --accent: #10b981;
+            --text: #f3f4f6;
+            --text-muted: #9ca3af;
+            --mono: 'JetBrains Mono', monospace;
+            --heading: 'Space Grotesk', sans-serif;
+            --body: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--body);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        header {
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(11, 15, 25, 0.85);
+        }
+
+        .nav-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .brand {
+            font-family: var(--heading);
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge-edu {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            background: var(--primary-glow);
+            color: var(--primary);
+            border: 1px solid var(--border-highlight);
+            padding: 2px 8px;
+            border-radius: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .btn-cta {
+            background: var(--primary);
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-cta:hover {
+            background: #2563eb;
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 90px 0 60px;
+        }
+
+        .eyebrow {
+            font-family: var(--mono);
+            color: var(--primary);
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .eyebrow::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        h1 {
+            font-family: var(--heading);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 720px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .metric-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .metric-val {
+            font-family: var(--heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .metric-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+
+        /* Pillars Section */
+        section {
+            padding: 64px 0;
+        }
+
+        .section-title {
+            font-family: var(--heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            font-size: 0.95rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px;
+            transition: all 0.25s ease;
+        }
+
+        .card:hover {
+            border-color: var(--border-highlight);
+            transform: translateY(-3px);
+            background: var(--surface-hover);
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .card h3 {
+            font-family: var(--heading);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 4px 10px;
+            border-radius: 6px;
+            color: var(--text-muted);
+        }
+
+        /* Contact footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 48px 0;
+            margin-top: 80px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-wrap">
+            <a href="#" class="brand">
+                Usman Saleem
+                <span class="badge-edu">MEng &bull; uOttawa</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Project Delivery</a></li>
+                <li><a href="#contact" class="btn-cta">Get in Touch</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="eyebrow">MECHANICAL ENGINEERING & PROJECT COORDINATION</div>
+            <h1>Bridging Precision CAD, Manufacturing & Technical Execution.</h1>
+            <p class="lead">
+                Mechanical Engineer with a Master of Engineering (MEng, University of Ottawa). Experienced in manufacturing, industrial equipment installation and commissioning, technical estimating, CAD modeling, and process improvement across complex multi-facility accounts.
+            </p>
+
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric-val">40+</div>
+                    <div class="metric-label">Concurrent National Key Account Projects</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">CAD / GD&T</div>
+                    <div class="metric-label">SolidWorks & AutoCAD Analysis</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">Field to ERP</div>
+                    <div class="metric-label">End-to-End Quotation to Invoicing Governance</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">MEng</div>
+                    <div class="metric-label">University of Ottawa Mechanical Engineering</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="expertise">
+            <h2 class="section-title">Core Engineering Disciplines</h2>
+            <p class="section-desc">Combining hands-on plant-floor problem solving with data-driven workflow coordination.</p>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>CAD & Mechanical Estimating</h3>
+                    <p>
+                        Interpreting complex architectural drawings, structural specifications, and field take-offs to prepare rigorous, accurate estimates and technical quotations for industrial installations.
+                    </p>
+                    <div class="chips">
+                        <span class="chip">SolidWorks</span>
+                        <span class="chip">AutoCAD</span>
+                        <span class="chip">GD&T</span>
+                        <span class="chip">Bill of Materials (BOM)</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🏗️</div>
+                    <h3>Installation & Equipment Commissioning</h3>
+                    <p>
+                        Troubleshooting on-site mechanical and electrical installation discrepancies, coordinating corrective action with field technicians, and overseeing safe commissioning of heavy entrance systems.
+                    </p>
+                    <div class="chips">
+                        <span class="chip">Commissioning</span>
+                        <span class="chip">Field Verification</span>
+                        <span class="chip">Quality Control</span>
+                        <span class="chip">Safety Standards</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3>Process Improvement & Digital Operations</h3>
+                    <p>
+                        Streamlining project tracking and milestone governance across national accounts using structured digital workflows, SQL data queries, Power BI dashboards, and enterprise ERP tools.
+                    </p>
+                    <div class="chips">
+                        <span class="chip">Power BI</span>
+                        <span class="chip">Power Automate</span>
+                        <span class="chip">SQL</span>
+                        <span class="chip">Baan ERP</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" style="text-align: center; padding: 60px 0;">
+            <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 48px 24px; max-width: 680px; margin: 0 auto;">
+                <h2 style="font-family: var(--heading); font-size: 1.8rem; margin-bottom: 12px;">Connect with Usman</h2>
+                <p style="color: var(--text-muted); margin-bottom: 24px;">Open for mechanical engineering coordination, technical estimating, and process improvement leadership.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="mailto:usman.saleem@uottawa.ca" class="btn-cta">Email: usman.saleem@uottawa.ca</a>
+                    <a href="https://linkedin.com/in/usmansal" target="_blank" style="background: rgba(255,255,255,0.06); color: var(--text); padding: 8px 18px; border-radius: 8px; text-decoration: none; border: 1px solid var(--border); font-size: 0.85rem; font-weight: 600;">LinkedIn Profile</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Usman Saleem, MEng &bull; <a href="https://github.com/UxmanX">GitHub</a> &bull; <a href="https://linkedin.com/in/usmansal">LinkedIn</a></p>
+        </div>
+    </footer>
+</body>
+</html>
